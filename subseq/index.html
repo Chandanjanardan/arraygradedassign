@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longest subsequence</title>
+</head>
+<body>
+    <script>
+           function subseq(arr, n) {
+            let ans = 0, count = 0;
+  
+           
+            arr.sort(function (a, b) { return a - b; })
+  
+            var empty = [];
+            empty.push(arr[0]);
+  
+        
+            for (let i = 1; i < n; i++) {
+                if (arr[i] != arr[i - 1])
+                    empty.push(arr[i]);
+            }
+            
+          
+            for (let i = 0; i < empty.length; i++) {
+  
+              
+                if (i > 0 && empty[i] == empty[i - 1] + 1)
+                    count++;
+               
+                else
+                    count = 1;
+  
+               
+                ans = Math.max(ans, count);
+            }
+            return ans;
+        }
+  
+       
+  
+        
+        console.log(
+        subseq([2,6,1,9,4,5,3,], 7)
+        );
+    </script>>
+</body>
+</html>
