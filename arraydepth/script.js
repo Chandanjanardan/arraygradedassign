@@ -18,4 +18,8 @@
 //   console.log(depth([1,2,3,4]))
 function depth(aee){
   let depth = Array.isArray(Array)
+  let des=[...arr]
+  while(Array.isArray(des)){
+    for (let item of des)
+  }
 }
